@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  KRAShub.org — New Page Template                    ║
+  ║                                                      ║
+  ║  HOW TO ADD A NEW PAGE:                              ║
+  ║  1. Copy this file, rename it (e.g. about.html)      ║
+  ║  2. Update <title> and <meta description>            ║
+  ║  3. Add your page to the nav (see comment below)     ║
+  ║  4. Add a link in the footer nav col                 ║
+  ║  5. Fill in .page-hero and .content sections         ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Title — KRAShub.org</title>
+  <meta name="description" content="Page description here." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ════════════ NAV ════════════
+       To add this page to the nav:
+       Copy one of the <li class="nav__item"> lines below and update the href/text.
+       Do the same in volunteer.html and index.html.
+  ═══════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+
+      <a href="index.html" class="nav__logo" aria-label="KRAShub home">
+        <img src="assets/logo-mark.png" alt="KRAShub mark" class="nav__logo-img" />
+        <span class="nav__logo-text">KRAShub<span>.org</span></span>
+      </a>
+
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li class="nav__item"><a href="index.html">Home</a></li>
+
+        <li class="nav__item" id="dd-trials">
+          <button aria-haspopup="true" aria-expanded="false" aria-controls="dd-trials-menu">
+            Clinical Trials
+            <svg class="nav__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav__dropdown" id="dd-trials-menu" role="menu">
+            <a href="index.html#trial-finder" role="menuitem">
+              <span class="dd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+              <span class="dd-label"><strong>KRAS Trial Finder</strong><span>Browse open trials</span></span>
+            </a>
+            <hr />
+            <a href="#" role="menuitem">
+              <span class="dd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+              <span class="dd-label"><strong>Upcoming Webinars</strong><span>KRAS Kickers events</span></span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav__item"><a href="index.html#privacy">Privacy</a></li>
+        <li class="nav__item"><a href="volunteer.html">Volunteer</a></li>
+        <!-- ▼ ADD NEW PAGE LINK HERE ▼ -->
+        <li class="nav__item"><a href="your-page.html" class="active">Your Page</a></li>
+      </ul>
+
+      <div class="nav__right">
+        <a href="https://www.youtube.com/channel/UCUIekD9xgqp1kwDxvmqTebQ" target="_blank" rel="noopener" aria-label="YouTube" class="nav__social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/groups/kraskickers" target="_blank" rel="noopener" aria-label="Facebook" class="nav__social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        </a>
+        <a href="https://x.com/kraskickers" target="_blank" rel="noopener" aria-label="X / Twitter" class="nav__social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.15h3.68l-8.04 9.19 9.46 12.51H16.1l-5.8-7.59-6.64 7.59H.96l8.6-9.83L.53 1.15H8.1l5.24 6.93zm-1.29 19.52h2.04L6.48 3.24H4.3z"/></svg>
+        </a>
+        <button class="nav__burger" id="nav-burger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ════════════ ANNOUNCEMENT BAR ════════════ -->
+  <div class="announce" role="banner" aria-label="Site status">
+    <div class="container">
+      <div class="announce__inner">
+        <span class="announce__badge">
+          <span class="announce__badge-dot"></span>
+          Beta Preview
+        </span>
+        <p class="announce__text">
+          <strong>Currently in beta.</strong> Prototype experience with a limited data snapshot — clinical review in progress by KRAS Kickers.
+        </p>
+        <a href="index.html#privacy" class="announce__link">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ════════════ PAGE HERO ════════════ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="label">Section Label</span>
+        <h1>Page Title Here</h1>
+        <p>A short description of this page — one or two sentences is plenty. Keep it clear and patient-focused.</p>
+      </div>
+    </section>
+
+    <!-- ════════════ MAIN CONTENT ════════════ -->
+    <section class="content">
+      <div class="container">
+
+        <!--
+          LAYOUT OPTIONS — uncomment the one you need:
+
+          Option A: Narrow centered text content
+          <div class="content--narrow">
+            <p>Your content here…</p>
+          </div>
+
+          Option B: 2-column card grid
+          <div class="card-grid card-grid-2">
+            <div class="card">…</div>
+            <div class="card">…</div>
+          </div>
+
+          Option C: 3-column card grid
+          <div class="card-grid card-grid-3">
+            <div class="card">
+              <div class="card__ico"><svg>…</svg></div>
+              <h3>Card Title</h3>
+              <p>Card description.</p>
+              <a href="#" class="card-link">Learn more →</a>
+            </div>
+          </div>
+        -->
+
+        <!-- ▼ YOUR CONTENT GOES HERE ▼ -->
+        <p style="color:var(--text-muted);text-align:center;padding:60px 0">
+          Replace this placeholder with your page content.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ════════════ CTA (optional — remove if not needed) ════════════ -->
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-band__inner">
+          <h2>Ready to Explore Trials?</h2>
+          <p>Browse KRAS-specific clinical trials in plain language — no tracking, no sign-up required.</p>
+          <div class="cta-band__btns">
+            <a href="index.html#trial-finder" class="btn btn-white btn-lg">KRAS Trial Finder</a>
+            <a href="volunteer.html" class="btn btn-outline-white btn-lg">Volunteer to Review</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <div class="footer__brand-logo">
+            <img src="assets/logo-mark.png" alt="KRAShub" />
+            <span style="font-family:var(--font-hd);font-weight:900;font-size:1.15rem;color:rgba(255,255,255,.9)">KRAShub.org</span>
+          </div>
+          <p>A patient-centered clinical trial finder for people living with KRAS-driven cancers. Built by KRAS Kickers.</p>
+          <div class="footer__socials">
+            <a href="https://www.youtube.com/channel/UCUIekD9xgqp1kwDxvmqTebQ" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.2 3.5-6.2 3.5z"/></svg></a>
+            <a href="https://www.facebook.com/groups/kraskickers" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+            <a href="https://x.com/kraskickers" target="_blank" rel="noopener" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.15h3.68l-8.04 9.19 9.46 12.51H16.1l-5.8-7.59-6.64 7.59H.96l8.6-9.83L.53 1.15H8.1l5.24 6.93zm-1.29 19.52h2.04L6.48 3.24H4.3z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <h5>Navigate</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#trial-finder">Trial Finder</a></li>
+            <li><a href="index.html#privacy">Privacy</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <!-- ▼ ADD NEW PAGE FOOTER LINK HERE ▼ -->
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h5>Cancer Types</h5>
+          <ul>
+            <li><a href="#">Pancreatic Cancer</a></li>
+            <li><a href="#">Lung Cancer</a></li>
+            <li><a href="#">Colorectal Cancer</a></li>
+            <li><a href="#">Rare Cancers</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 KRAShub.org &mdash; Built by KRAS Kickers</span>
+        <span>Privacy by design &mdash; no tracking, ever.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
