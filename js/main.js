@@ -84,15 +84,34 @@ if (form) {
     btn.disabled = true;
     btn.innerHTML = 'Sending&hellip;';
 
-    // Replace with real fetch to your form endpoint (Formspree, Netlify, etc.)
-    setTimeout(() => {
-      form.reset();
-      btn.innerHTML = orig;
-      btn.disabled = false;
-      if (successMsg) {
-        successMsg.style.display = 'block';
-        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    }, 1400);
+    // Google Apps Script web app URL — replace with your deployed URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNJiRnRlt8X4RZUkxCtEbMGE3hxBRUwSb_4iAEsZGdVf7q0G5Q7d5C7n2AM9XG4ko/exec';
+
+    const data = new FormData(form);
+    data.append('newsletter', form.querySelector('#newsletter').checked ? 'Yes' : 'No');
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: data,
+    })
+      .then(res => res.json())
+      .then(result => {
+        if (result.status === 'success') {
+          form.reset();
+          if (successMsg) {
+            successMsg.style.display = 'block';
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      })
+      .catch(() => {
+        alert('Network error. Please check your connection and try again.');
+      })
+      .finally(() => {
+        btn.innerHTML = orig;
+        btn.disabled = false;
+      });
   });
 }
