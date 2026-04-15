@@ -87,23 +87,27 @@ if (form) {
     // Google Apps Script web app URL — replace with your deployed URL
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNJiRnRlt8X4RZUkxCtEbMGE3hxBRUwSb_4iAEsZGdVf7q0G5Q7d5C7n2AM9XG4ko/exec';
 
-    const data = new FormData(form);
-    data.append('newsletter', form.querySelector('#newsletter').checked ? 'Yes' : 'No');
+    const payload = {
+      first_name: form.querySelector('#first').value,
+      last_name:  form.querySelector('#last').value,
+      email:      form.querySelector('#email').value,
+      role:       form.querySelector('#role').value,
+      subject:    form.querySelector('#subject').value,
+      message:    form.querySelector('#message').value,
+      newsletter: form.querySelector('#newsletter').checked ? 'Yes' : 'No',
+    };
 
     fetch(SCRIPT_URL, {
       method: 'POST',
-      body: data,
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(payload).toString(),
     })
-      .then(res => res.json())
-      .then(result => {
-        if (result.status === 'success') {
-          form.reset();
-          if (successMsg) {
-            successMsg.style.display = 'block';
-            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-        } else {
-          alert('Something went wrong. Please try again.');
+      .then(() => {
+        form.reset();
+        if (successMsg) {
+          successMsg.style.display = 'block';
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       })
       .catch(() => {
